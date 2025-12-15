@@ -1,5 +1,7 @@
 "use client"
 
+import { useDebounce } from "use-debounce";
+
 import { Canvas } from "@react-three/fiber"
 import { OrbitControls } from "@react-three/drei"
 import Mobius from "./components/Mobius"
@@ -11,7 +13,8 @@ import CodeBlock from "./components/Code"
 export default function App() {
   const [thickness, setThickness] = useState(0.6)
   const [depth, setDepth] = useState(0.25)
-
+  const [thicknessDebounced] = useDebounce(thickness, 120);
+  const [depthDebounced] = useDebounce(depth, 120);
   return (
     <div className="flex flex-col items-center justify-center w-screen min-h-screen p-4">
       <div className="w-full max-w-7xl">
@@ -33,7 +36,7 @@ export default function App() {
             <ambientLight intensity={0.3} />
             <directionalLight position={[5, 5, 5]} />
 
-            <Mobius thickness={thickness} depth={depth} />
+            <Mobius thickness={thicknessDebounced} depth={depthDebounced} />
             <OrbitControls />
           </Canvas>
         </div>

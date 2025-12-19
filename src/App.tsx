@@ -18,7 +18,7 @@ export default function App() {
   return (
     <div className="flex flex-col items-center justify-center w-screen min-h-screen p-4">
       <div className=" text-justify max-w-7xl">
-        <h1 className="font-bold text-3xl text-blue-300 text-center">Project ni Michael Garcera</h1>
+        <h1 className="font-bold text-3xl text-blue-300 text-center">Mobius Solid Final Project</h1>
         <div className=" w-full px-4 max-w-4xl text-sm">
           <p>
             <span className="font-bold">Important Note: </span> Due to technical constraints of ThreeJS and React, We can't remove
